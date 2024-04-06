@@ -14,9 +14,14 @@ function calculate() {
     let multiplication = document.getElementById('multiplication').value;
     let divid = document.getElementById('divid').value;
      
-    //  validation number & text ....
-    if( !Number( value1,value2 ) ){
+    //  validation number  ....
+    if( !Number( value1 ) ){
         document.getElementById('result').value = 'Please Type Number Value !';
+        validation();
+    }
+    else if( !Number( value2 ) ){
+        document.getElementById('result').value = 'Please Type Number Value !';
+        validation();
     }
     else{
         
@@ -43,4 +48,29 @@ function calculate() {
         }
     }
     
-}
+} // calculate function End....
+
+// Validation .....
+function validation() { 
+    const value1 = document.getElementById("Input1");
+    const value2 = document.getElementById('Input2');
+
+    // Input 1....
+    if( value1.value.trim() == "" ){
+        document.getElementById("msg").innerHTML = 'Invalid Inpute';
+        return false;
+    }
+    else{
+        document.getElementById("msg").innerHTML = '';
+    }
+
+    // Input 2....
+    if( value2.value.trim() == "" ){
+        document.getElementById("msg2").innerHTML = 'Invalid Inpute';
+        return false;
+    }
+    else{
+        document.getElementById("msg2").innerHTML = '';
+    }
+ } // Validation End.....
+ 
